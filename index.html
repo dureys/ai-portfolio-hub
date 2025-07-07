@@ -30,8 +30,158 @@
         h2 { font-size: 2rem; margin-bottom: 2rem; color: #2c3e50; }
         
         .about { background: white; }
-        .experience { background: #f8f9fa; }
-        .projects { background: white; }
+        .cv-section { background: #f8f9fa; }
+        .experience { background: white; }
+        .projects { background: #f8f9fa; }
+        
+        /* Interactive CV Styles */
+        .cv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cv-column h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .cv-item {
+            background: white;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            border-left: 4px solid #3498db;
+        }
+        
+        .cv-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-left-color: #e74c3c;
+        }
+        
+        .cv-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cv-item h4 {
+            color: #2c3e50;
+            margin-bottom: 0.3rem;
+            font-size: 1.2rem;
+        }
+        
+        .cv-item .company {
+            color: #3498db;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        
+        .cv-item .date {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        
+        .cv-brief {
+            color: #666;
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+        
+        .cv-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            opacity: 0;
+            margin-top: 1rem;
+        }
+        
+        .cv-item:hover .cv-details {
+            max-height: 500px;
+            opacity: 1;
+        }
+        
+        .cv-details ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .cv-details li {
+            padding: 0.3rem 0;
+            color: #555;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .cv-details li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+        }
+        
+        .skill-item {
+            background: white;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 3px solid #3498db;
+        }
+        
+        .skill-item:hover {
+            background: #3498db;
+            color: white;
+            transform: translateX(10px);
+        }
+        
+        .skill-category {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+        
+        .skill-list {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .education-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .education-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .hover-hint {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: #3498db;
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            opacity: 0.7;
+        }
         
         .card {
             background: white;
@@ -59,6 +209,17 @@
             text-align: center;
             padding: 2rem 0;
         }
+        
+        @media (max-width: 768px) {
+            .cv-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cv-item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
     </style>
 </head>
 <body>
@@ -82,33 +243,179 @@
         </div>
     </section>
 
-    <section class="experience">
+    <section class="cv-section">
         <div class="container">
-            <h2>Experience</h2>
+            <h2>📋 Interactive CV <small style="color: #666; font-size: 0.6em;">Hover for details</small></h2>
             
-            <div class="card">
-                <h3>AI Product Owner - Andercore GmbH</h3>
-                <p><em>August 2024 - Present</em></p>
-                <p>Leading AI-powered systems for sales, procurement, and logistics automation.</p>
-            </div>
-            
-            <div class="card">
-                <h3>Product Manager - Ubitricity GmbH</h3>
-                <p><em>April 2023 - August 2024</em></p>
-                <p>Led Salesforce environment overhaul for EV charging infrastructure.</p>
-            </div>
-            
-            <div class="card">
-                <h3>Business Integration Analyst - Accenture GmbH</h3>
-                <p><em>July 2021 - April 2023</em></p>
-                <p>Software configuration and international rollouts across 10+ markets.</p>
+            <div class="cv-grid">
+                <!-- Professional Experience Column -->
+                <div class="cv-column">
+                    <h3>💼 Professional Experience</h3>
+                    
+                    <div class="cv-item">
+                        <div class="hover-hint">Hover me</div>
+                        <div class="cv-item-header">
+                            <div>
+                                <h4>Salesforce and AI Product Owner</h4>
+                                <div class="company">Andercore GmbH</div>
+                            </div>
+                            <div class="date">Aug 2024 - Present</div>
+                        </div>
+                        <div class="cv-brief">Leading AI-powered systems and cross-functional teams</div>
+                        <div class="cv-details">
+                            <ul>
+                                <li>Led cross-functional team of developers and Salesforce administrators</li>
+                                <li>Designed intelligent systems supporting sales, procurement, logistics</li>
+                                <li>Managed transformation initiatives, scaling operations and automating workflows</li>
+                                <li>Implemented customer support case system leveraging Salesforce Flows and AI</li>
+                                <li>Developed internal support tools and knowledge infrastructure</li>
+                                <li>Served as strategic advisor facilitating weekly stakeholder meetings</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="cv-item">
+                        <div class="hover-hint">Hover me</div>
+                        <div class="cv-item-header">
+                            <div>
+                                <h4>Product Manager / Product Owner</h4>
+                                <div class="company">Ubitricity GmbH</div>
+                            </div>
+                            <div class="date">Apr 2023 - Aug 2024</div>
+                        </div>
+                        <div class="cv-brief">Led complete Salesforce environment overhaul</div>
+                        <div class="cv-details">
+                            <ul>
+                                <li>Led complete overhaul of Salesforce environment for EV charging</li>
+                                <li>Migrated from legacy systems and optimized workflows</li>
+                                <li>Defined long-term roadmap for Salesforce applications</li>
+                                <li>Delivered multiple projects: Sitetracker, Sales Cloud, Service Cloud</li>
+                                <li>Translated business requirements into actionable user stories</li>
+                                <li>Led migration from Objective to Salesforce Sales Cloud</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="cv-item">
+                        <div class="hover-hint">Hover me</div>
+                        <div class="cv-item-header">
+                            <div>
+                                <h4>Digital Business Integration Analyst</h4>
+                                <div class="company">Accenture GmbH</div>
+                            </div>
+                            <div class="date">Jul 2021 - Apr 2023</div>
+                        </div>
+                        <div class="cv-brief">Software configuration and international rollouts</div>
+                        <div class="cv-details">
+                            <ul>
+                                <li>Software Configuration Engineer for International Tobacco Company</li>
+                                <li>Implemented configuration management plan</li>
+                                <li>Designed software configuration and customization</li>
+                                <li>Rollout Integration Manager for leading Car Manufacturers</li>
+                                <li>Rollout planning for 10+ markets</li>
+                                <li>Market requirement specification & Go Live coordination</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="cv-item">
+                        <div class="hover-hint">Hover me</div>
+                        <div class="cv-item-header">
+                            <div>
+                                <h4>Process Manager & Salesforce Product Manager</h4>
+                                <div class="company">Lemon One GmbH</div>
+                            </div>
+                            <div class="date">Jul 2019 - Jun 2021</div>
+                        </div>
+                        <div class="cv-brief">Salesforce processes and daily operations</div>
+                        <div class="cv-details">
+                            <ul>
+                                <li>Managed product backlogs ensuring alignment with commercial needs</li>
+                                <li>Planned and developed Salesforce processes for daily activities</li>
+                                <li>Designed custom Salesforce validation rules and approval processes</li>
+                                <li>Configured Email-to-Case functionality improving support response</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Education & Skills Column -->
+                <div class="cv-column">
+                    <h3>🎓 Education</h3>
+                    
+                    <div class="education-item">
+                        <h4>Master of Science in Management</h4>
+                        <div><strong>Track:</strong> Quantitative Business</div>
+                        <div><strong>Specialization:</strong> Business Analytics</div>
+                        <div><strong>Institution:</strong> ESMT Berlin - Germany</div>
+                        <div><strong>Period:</strong> Sep 2017 - Sep 2019</div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <h4>Bachelor of Business Administration</h4>
+                        <div><strong>Tracks:</strong> Management and Marketing</div>
+                        <div><strong>Institution:</strong> Koç University - Turkey</div>
+                        <div><strong>Period:</strong> Sep 2011 - Aug 2016</div>
+                    </div>
+                    
+                    <h3 style="margin-top: 2rem;">💻 Technology Stack</h3>
+                    
+                    <div class="skill-item">
+                        <div class="skill-category">CRM & Automation</div>
+                        <div class="skill-list">Salesforce, Zapier, MS Office, G Suite, Zendesk, Adobe Photoshop, Adobe Fireworks, Confluence</div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-category">AI & Development</div>
+                        <div class="skill-list">AutoGen, Local LLMs, Python, JIRA, WordPress, Webflow, HTML (basic), AEM New Forms, Adobe Analytics</div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-category">Project Management</div>
+                        <div class="skill-list">Adobe Workfront, AEP, Agile Delivery Frameworks, Cross-functional Leadership</div>
+                    </div>
+                    
+                    <h3 style="margin-top: 2rem;">🌍 Languages</h3>
+                    
+                    <div class="skill-item">
+                        <div class="skill-category">Turkish</div>
+                        <div class="skill-list">Native Speaker</div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-category">English</div>
+                        <div class="skill-list">Native Level</div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-category">German and French</div>
+                        <div class="skill-list">Beginner Level</div>
+                    </div>
+                    
+                    <h3 style="margin-top: 2rem;">🏆 Awards & Certifications</h3>
+                    
+                    <div class="skill-item">
+                        <div class="skill-category">Adobe Certified Professional</div>
+                        <div class="skill-list">Adobe Analytics Business Practitioner</div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-category">Adobe Qualified</div>
+                        <div class="skill-list">Adobe Experience Platform</div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-category">Academic Achievement</div>
+                        <div class="skill-list">Partial Merit Scholarship, ESMT (2017)<br>Example Leader Award, Geleceğin Yıldızları Summer Camps, Uludağ (2017)</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="projects">
         <div class="container">
-            <h2>AI Projects</h2>
+            <h2>🚀 AI Projects</h2>
             
             <div class="card">
                 <h3>🤖 AutoGen Multi-Agent CRM System</h3>
