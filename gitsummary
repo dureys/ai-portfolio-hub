@@ -1,0 +1,4 @@
+
+#!/bin/bash
+echo "🤖 Git Summary Agent Starting..."
+python ai-assistants/git-summary-agent/git_summary_agent.py
