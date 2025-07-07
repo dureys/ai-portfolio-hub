@@ -3,425 +3,1007 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oğuzhan DURAÇE - AI Product Owner</title>
+    <title>Oğuzhan DURAÇE - AI Solutions Builder | From Product Owner to AI Architect</title>
+    <meta name="description" content="Product Owner transitioning to AI Solutions Builder. Building practical AI tools daily. 5+ years automation expertise + emerging AI skills.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
     <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --accent-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --dark-bg: #0a0a0a;
+            --dark-card: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent-blue: #00d4ff;
+            --accent-purple: #6366f1;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Inter', sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
             line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
+            overflow-x: hidden;
         }
         
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-        
-        header {
-            background: #2c3e50;
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
+        /* Modern Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
         }
         
-        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        .subtitle { font-size: 1.2rem; opacity: 0.9; }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
         
-        section { padding: 3rem 0; }
-        h2 { font-size: 2rem; margin-bottom: 2rem; color: #2c3e50; }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--success-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
         
-        .about { background: white; }
-        .cv-section { background: #f8f9fa; }
-        .experience { background: white; }
-        .projects { background: #f8f9fa; }
-        
-        /* Interactive CV Styles */
-        .cv-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+        .nav-links {
+            display: flex;
             gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-blue);
+        }
+        
+        /* Hero Section - Career Transition Story */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 5rem;
+            position: relative;
+            background: radial-gradient(ellipse at center, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+        }
+        
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .hero-content h1 {
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        
+        .hero-gradient-text {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .career-transition-badge {
+            display: inline-block;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid var(--accent-blue);
+            color: var(--accent-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
             margin-bottom: 2rem;
         }
         
-        .cv-column h3 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+        .hero-description {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
         }
         
-        .cv-item {
-            background: white;
-            padding: 1.5rem;
-            margin: 1rem 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            border-left: 4px solid #3498db;
-        }
-        
-        .cv-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            border-left-color: #e74c3c;
-        }
-        
-        .cv-item-header {
+        .hero-stats {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 0.5rem;
+            gap: 2rem;
+            margin: 2rem 0;
         }
         
-        .cv-item h4 {
-            color: #2c3e50;
-            margin-bottom: 0.3rem;
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--success-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .cta-container {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent-blue);
+        }
+        
+        /* Journey Visualization */
+        .journey-visual {
+            background: var(--dark-card);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+        
+        .journey-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            color: var(--accent-blue);
+        }
+        
+        .journey-path {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .journey-step {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .journey-step:hover {
+            background: rgba(102, 126, 234, 0.1);
+            transform: translateX(5px);
+        }
+        
+        .step-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 1.2rem;
         }
         
-        .cv-item .company {
-            color: #3498db;
-            font-weight: 600;
-            font-size: 0.95rem;
+        .step-past { background: var(--success-gradient); }
+        .step-current { background: var(--accent-gradient); animation: pulse 2s infinite; }
+        .step-future { background: rgba(255, 255, 255, 0.1); }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
         }
         
-        .cv-item .date {
-            color: #7f8c8d;
-            font-size: 0.9rem;
-            white-space: nowrap;
+        /* AI Skills Showcase */
+        .skills-section {
+            padding: 6rem 0;
+            background: var(--dark-card);
         }
         
-        .cv-brief {
-            color: #666;
-            font-size: 0.95rem;
-            margin-top: 0.5rem;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
         
-        .cv-details {
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            opacity: 0;
-            margin-top: 1rem;
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
         }
         
-        .cv-item:hover .cv-details {
-            max-height: 500px;
-            opacity: 1;
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
         }
         
-        .cv-details ul {
-            list-style: none;
-            padding-left: 0;
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
         }
         
-        .cv-details li {
-            padding: 0.3rem 0;
-            color: #555;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        
-        .cv-details li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: #3498db;
-        }
-        
-        .skill-item {
-            background: white;
-            padding: 1rem;
-            margin: 0.5rem 0;
-            border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-left: 3px solid #3498db;
-        }
-        
-        .skill-item:hover {
-            background: #3498db;
-            color: white;
-            transform: translateX(10px);
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
         
         .skill-category {
-            font-weight: 600;
-            margin-bottom: 0.3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--primary-gradient);
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent-blue);
+        }
+        
+        .skill-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-gradient);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-category h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
         }
         
         .skill-list {
-            font-size: 0.9rem;
-            opacity: 0.8;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
         
-        .education-item {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 1rem 0;
-            cursor: pointer;
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* AI Projects Showcase */
+        .projects-section {
+            padding: 6rem 0;
+            background: var(--dark-bg);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .project-card {
+            background: var(--dark-card);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .project-card:hover::before {
+            left: 100%;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent-blue);
+        }
+        
+        .project-status {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .status-building { background: rgba(245, 87, 108, 0.2); color: #f5576c; }
+        .status-live { background: rgba(79, 172, 254, 0.2); color: #4facfe; }
+        .status-planning { background: rgba(255, 193, 7, 0.2); color: #ffc107; }
+        
+        .project-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tech-tag {
+            background: rgba(102, 126, 234, 0.2);
+            color: var(--accent-blue);
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .project-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
             transition: all 0.3s ease;
         }
         
-        .education-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        .project-link:hover {
+            color: var(--text-primary);
+            transform: translateX(3px);
         }
         
-        .card {
-            background: white;
+        /* Experience Timeline */
+        .experience-section {
+            padding: 6rem 0;
+            background: var(--dark-card);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: var(--primary-gradient);
+            border-radius: 3px;
+        }
+        
+        .timeline-item {
+            margin: 3rem 0;
+            position: relative;
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--accent-blue);
+            border: 4px solid var(--dark-card);
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--accent-blue);
+        }
+        
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.05);
             padding: 2rem;
-            margin: 1rem 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 45%;
+            transition: all 0.3s ease;
         }
         
-        .btn {
-            display: inline-block;
-            background: #3498db;
-            color: white;
-            padding: 12px 24px;
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 55%;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 55%;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            border-color: var(--accent-blue);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 6rem 0;
+            background: var(--dark-bg);
+            text-align: center;
+        }
+        
+        .contact-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--text-primary);
             text-decoration: none;
-            border-radius: 5px;
-            margin: 10px 5px;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            transition: all 0.3s ease;
         }
         
-        .btn:hover { background: #2980b9; }
+        .contact-link:hover {
+            background: rgba(102, 126, 234, 0.1);
+            border-color: var(--accent-blue);
+            transform: translateY(-3px);
+        }
         
-        footer {
-            background: #2c3e50;
-            color: white;
+        /* Footer */
+        .footer {
+            background: var(--dark-card);
             text-align: center;
             padding: 2rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .cv-grid {
+            .hero-container {
                 grid-template-columns: 1fr;
+                text-align: center;
             }
             
-            .cv-item-header {
-                flex-direction: column;
-                align-items: flex-start;
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 50px;
+                margin-right: 0;
+                width: calc(100% - 50px);
+            }
+            
+            .timeline-marker {
+                left: 20px;
+            }
+            
+            .nav-links {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Oğuzhan DURAÇE</h1>
-            <p class="subtitle">AI Product Owner & Salesforce Expert</p>
-            <p>Building intelligent business solutions • Berlin, Germany</p>
-            <br>
-            <a href="mailto:durace@gmail.com" class="btn">Contact Me</a>
-            <a href="https://github.com/dureys/ai-portfolio-hub" class="btn">GitHub Portfolio</a>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Oğuzhan DURAÇE</div>
+            <ul class="nav-links">
+                <li><a href="#about">Journey</a></li>
+                <li><a href="#skills">AI Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
-    <section class="about">
-        <div class="container">
-            <h2>About</h2>
-            <p>AI Product Owner at Andercore GmbH with 5+ years experience in Berlin's tech ecosystem. Specializing in multi-agent AI systems, Salesforce automation, and building intelligent business solutions with measurable impact.</p>
-            <br>
-            <p><strong>Current Focus:</strong> Developing advanced AutoGen multi-agent systems with local GPU acceleration.</p>
-        </div>
-    </section>
-
-    <section class="cv-section">
-        <div class="container">
-            <h2>📋 Interactive CV</h2>
-            
-            <div class="cv-grid">
-                <!-- Professional Experience Column -->
-                <div class="cv-column">
-                    <h3>💼 Professional Experience</h3>
-                    
-                    <div class="cv-item">
-                        <div class="cv-item-header">
-                            <div>
-                                <h4>Salesforce and AI Product Owner</h4>
-                                <div class="company">Andercore GmbH</div>
-                            </div>
-                            <div class="date">Aug 2024 - Present</div>
-                        </div>
-                        <div class="cv-brief">Leading AI-powered systems and cross-functional teams</div>
-                        <div class="cv-details">
-                            <ul>
-                                <li>Led cross-functional team of developers and Salesforce administrators</li>
-                                <li>Designed intelligent systems supporting sales, procurement, logistics</li>
-                                <li>Managed transformation initiatives, scaling operations and automating workflows</li>
-                                <li>Implemented customer support case system leveraging Salesforce Flows and AI</li>
-                                <li>Developed internal support tools and knowledge infrastructure</li>
-                                <li>Served as strategic advisor facilitating weekly stakeholder meetings</li>
-                            </ul>
-                        </div>
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="career-transition-badge">
+                    <i class="fas fa-rocket"></i> Career Transition in Progress
+                </div>
+                <h1>
+                    From Product Owner to<br>
+                    <span class="hero-gradient-text">AI Solutions Builder</span>
+                </h1>
+                <p class="hero-description">
+                    5+ years automating enterprise workflows. Now building AI tools daily and documenting the journey. 
+                    I don't just manage AI projects—I build them.
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Years in Tech</span>
                     </div>
-                    
-                    <div class="cv-item">
-                        <div class="cv-item-header">
-                            <div>
-                                <h4>Product Manager / Product Owner</h4>
-                                <div class="company">Ubitricity GmbH</div>
-                            </div>
-                            <div class="date">Apr 2023 - Aug 2024</div>
-                        </div>
-                        <div class="cv-brief">Led complete Salesforce environment overhaul</div>
-                        <div class="cv-details">
-                            <ul>
-                                <li>Led complete overhaul of Salesforce environment for EV charging</li>
-                                <li>Migrated from legacy systems and optimized workflows</li>
-                                <li>Defined long-term roadmap for Salesforce applications</li>
-                                <li>Delivered multiple projects: Sitetracker, Sales Cloud, Service Cloud</li>
-                                <li>Translated business requirements into actionable user stories</li>
-                                <li>Led migration from Objective to Salesforce Sales Cloud</li>
-                            </ul>
-                        </div>
+                    <div class="stat">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Major Companies</span>
                     </div>
-                    
-                    <div class="cv-item">
-                        <div class="cv-item-header">
-                            <div>
-                                <h4>Digital Business Integration Analyst</h4>
-                                <div class="company">Accenture GmbH</div>
-                            </div>
-                            <div class="date">Jul 2021 - Apr 2023</div>
-                        </div>
-                        <div class="cv-brief">Software configuration and international rollouts</div>
-                        <div class="cv-details">
-                            <ul>
-                                <li>Software Configuration Engineer for International Tobacco Company</li>
-                                <li>Implemented configuration management plan</li>
-                                <li>Designed software configuration and customization</li>
-                                <li>Rollout Integration Manager for leading Car Manufacturers</li>
-                                <li>Rollout planning for 10+ markets</li>
-                                <li>Market requirement specification & Go Live coordination</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="cv-item">
-                        <div class="cv-item-header">
-                            <div>
-                                <h4>Process Manager & Salesforce Product Manager</h4>
-                                <div class="company">Lemon One GmbH</div>
-                            </div>
-                            <div class="date">Jul 2019 - Jun 2021</div>
-                        </div>
-                        <div class="cv-brief">Salesforce processes and daily operations</div>
-                        <div class="cv-details">
-                            <ul>
-                                <li>Managed product backlogs ensuring alignment with commercial needs</li>
-                                <li>Planned and developed Salesforce processes for daily activities</li>
-                                <li>Designed custom Salesforce validation rules and approval processes</li>
-                                <li>Configured Email-to-Case functionality improving support response</li>
-                            </ul>
-                        </div>
+                    <div class="stat">
+                        <span class="stat-number">2024</span>
+                        <span class="stat-label">AI Focus Started</span>
                     </div>
                 </div>
                 
-                <!-- Education & Skills Column -->
-                <div class="cv-column">
-                    <h3>🎓 Education</h3>
-                    
-                    <div class="education-item">
-                        <h4>Master of Science in Management</h4>
-                        <div><strong>Track:</strong> Quantitative Business</div>
-                        <div><strong>Specialization:</strong> Business Analytics</div>
-                        <div><strong>Institution:</strong> ESMT Berlin - Germany</div>
-                        <div><strong>Period:</strong> Sep 2017 - Sep 2019</div>
+                <div class="cta-container">
+                    <a href="#projects" class="btn-primary">
+                        <i class="fas fa-code"></i> View AI Projects
+                    </a>
+                    <a href="https://github.com/dureys/ai-portfolio-hub" class="btn-secondary">
+                        <i class="fab fa-github"></i> GitHub Portfolio
+                    </a>
+                </div>
+            </div>
+            
+            <div class="journey-visual">
+                <div class="journey-title">🚀 My AI Transition Journey</div>
+                <div class="journey-path">
+                    <div class="journey-step">
+                        <div class="step-icon step-past">✅</div>
+                        <div>
+                            <strong>Product Owner</strong><br>
+                            <small>5 years automating workflows</small>
+                        </div>
                     </div>
-                    
-                    <div class="education-item">
-                        <h4>Bachelor of Business Administration</h4>
-                        <div><strong>Tracks:</strong> Management and Marketing</div>
-                        <div><strong>Institution:</strong> Koç University - Turkey</div>
-                        <div><strong>Period:</strong> Sep 2011 - Aug 2016</div>
+                    <div class="journey-step">
+                        <div class="step-icon step-current">🔥</div>
+                        <div>
+                            <strong>Learning AI Daily</strong><br>
+                            <small>Building tools, documenting journey</small>
+                        </div>
                     </div>
-                    
-                    <h3 style="margin-top: 2rem;">💻 Technology Stack</h3>
-                    
-                    <div class="skill-item">
-                        <div class="skill-category">CRM & Automation</div>
-                        <div class="skill-list">Salesforce, Zapier, MS Office, G Suite, Zendesk, Adobe Photoshop, Adobe Fireworks, Confluence</div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-category">AI & Development</div>
-                        <div class="skill-list">AutoGen, Local LLMs, Python, JIRA, WordPress, Webflow, HTML (basic), AEM New Forms, Adobe Analytics</div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-category">Project Management</div>
-                        <div class="skill-list">Adobe Workfront, AEP, Agile Delivery Frameworks, Cross-functional Leadership</div>
-                    </div>
-                    
-                    <h3 style="margin-top: 2rem;">🌍 Languages</h3>
-                    
-                    <div class="skill-item">
-                        <div class="skill-category">Turkish</div>
-                        <div class="skill-list">Native Speaker</div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-category">English</div>
-                        <div class="skill-list">Native Level</div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-category">German and French</div>
-                        <div class="skill-list">Beginner Level</div>
-                    </div>
-                    
-                    <h3 style="margin-top: 2rem;">🏆 Awards & Certifications</h3>
-                    
-                    <div class="skill-item">
-                        <div class="skill-category">Adobe Certified Professional</div>
-                        <div class="skill-list">Adobe Analytics Business Practitioner</div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-category">Adobe Qualified</div>
-                        <div class="skill-list">Adobe Experience Platform</div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-category">Academic Achievement</div>
-                        <div class="skill-list">Partial Merit Scholarship, ESMT (2017)<br>Example Leader Award, Geleceğin Yıldızları Summer Camps, Uludağ (2017)</div>
+                    <div class="journey-step">
+                        <div class="step-icon step-future">🎯</div>
+                        <div>
+                            <strong>AI Solutions Builder</strong><br>
+                            <small>Hands-on AI implementation roles</small>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="projects">
+    <!-- AI Skills Section -->
+    <section class="skills-section" id="skills">
         <div class="container">
-            <h2>🚀 AI Projects</h2>
-            
-            <div class="card">
-                <h3>🤖 AutoGen Multi-Agent CRM System</h3>
-                <p>Advanced multi-agent system using Microsoft AutoGen framework with local GPU acceleration for CRM automation.</p>
-                <p><strong>Tech:</strong> AutoGen, Python, Streamlit, Local LLMs</p>
-                <a href="https://github.com/dureys/ai-portfolio-hub/tree/main/autogen-projects/crm-automation" class="btn">View Project</a>
+            <div class="section-header">
+                <h2 class="section-title">AI Skills I'm Building</h2>
+                <p class="section-subtitle">Combining 5+ years of automation expertise with emerging AI technologies</p>
             </div>
             
-            <div class="card">
-                <h3>🔧 Git Summary Agent</h3>
-                <p>Intelligent AI assistant that automatically analyzes git commits and maintains project documentation.</p>
-                <p><strong>Tech:</strong> Python, Git Integration, Automation</p>
-                <a href="https://github.com/dureys/ai-portfolio-hub/tree/main/ai-assistants/git-summary-agent" class="btn">View Agent</a>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-icon">🤖</div>
+                    <h3>AI & Automation</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">OpenAI API</span>
+                        <span class="skill-tag">Claude API</span>
+                        <span class="skill-tag">Make.com</span>
+                        <span class="skill-tag">n8n</span>
+                        <span class="skill-tag">Zapier</span>
+                        <span class="skill-tag">Prompt Engineering</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-icon">⚙️</div>
+                    <h3>Enterprise Systems</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Salesforce</span>
+                        <span class="skill-tag">API Integration</span>
+                        <span class="skill-tag">Workflow Automation</span>
+                        <span class="skill-tag">Process Optimization</span>
+                        <span class="skill-tag">JIRA</span>
+                        <span class="skill-tag">Confluence</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-icon">💻</div>
+                    <h3>Development</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Python (Learning)</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">JavaScript (Basic)</span>
+                        <span class="skill-tag">Git/GitHub</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Cursor IDE</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-icon">📊</div>
+                    <h3>Product & Analytics</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Agile/Scrum</span>
+                        <span class="skill-tag">Product Strategy</span>
+                        <span class="skill-tag">Adobe Analytics</span>
+                        <span class="skill-tag">Business Intelligence</span>
+                        <span class="skill-tag">Cross-functional Leadership</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <!-- AI Projects Section -->
+    <section class="projects-section" id="projects">
         <div class="container">
-            <p>© 2025 Oğuzhan DURAÇE • Built with passion for AI innovation</p>
-            <p>📧 durace@gmail.com • 📱 +49 176 8009 3317 • 📍 Berlin, Germany</p>
+            <div class="section-header">
+                <h2 class="section-title">AI Projects I'm Building</h2>
+                <p class="section-subtitle">Practical AI solutions combining business expertise with emerging technology</p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-status status-building">🔨 Building</div>
+                    <h3>🤖 AI Sales Assistant</h3>
+                    <p class="project-description">
+                        Connecting Salesforce data with AI for intelligent lead qualification and insights. 
+                        Learning to combine my CRM expertise with AI APIs.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Make.com</span>
+                        <span class="tech-tag">OpenAI API</span>
+                        <span class="tech-tag">Salesforce</span>
+                        <span class="tech-tag">Google Sheets</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/dureys/ai-portfolio-hub/tree/main/projects/ai-sales-assistant" class="project-link">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-status status-live">✅ Live</div>
+                    <h3>🔧 Git Summary Agent</h3>
+                    <p class="project-description">
+                        Intelligent AI assistant that automatically analyzes git commits and maintains project documentation. 
+                        My first working AI automation tool.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Git Integration</span>
+                        <span class="tech-tag">Automation</span>
+                        <span class="tech-tag">Documentation</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/dureys/ai-portfolio-hub/tree/main/ai-assistants/git-summary-agent" class="project-link">
+                            <i class="fab fa-github"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-status status-planning">📋 Planning</div>
+                    <h3>📊 Customer Support Automator</h3>
+                    <p class="project-description">
+                        AI-powered ticket classification and response suggestions using natural language processing. 
+                        Combining my support experience with AI.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">n8n</span>
+                        <span class="tech-tag">ChatGPT API</span>
+                        <span class="tech-tag">Zendesk</span>
+                        <span class="tech-tag">NLP</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/dureys/ai-portfolio-hub/tree/main/projects/support-automator" class="project-link">
+                            <i class="fas fa-eye"></i> Coming Soon
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-status status-building">🧪 Experimenting</div>
+                    <h3>🌐 This Portfolio Website</h3>
+                    <p class="project-description">
+                        Built this entire portfolio site with AI assistance, documenting my learning journey. 
+                        Shows how AI can enhance traditional development.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML/CSS</span>
+                        <span class="tech-tag">GitHub Pages</span>
+                        <span class="tech-tag">Claude AI</span>
+                        <span class="tech-tag">Responsive Design</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/dureys/ai-portfolio-hub" class="project-link">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="experience-section" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Professional Journey</h2>
+                <p class="section-subtitle">5+ years building the foundation for AI implementation</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline# Continue the HTML from where it left off...
+
+@"
+               <div class="timeline-item">
+                   <div class="timeline-marker"></div>
+                   <div class="timeline-content">
+                       <h3>AI Product Owner</h3>
+                       <div style="color: #4facfe; font-weight: 600; margin-bottom: 0.5rem;">Andercore GmbH</div>
+                       <div style="color: #b0b0b0; font-size: 0.9rem; margin-bottom: 1rem;">August 2024 - Present</div>
+                       <p style="color: #b0b0b0; line-height: 1.6;">
+                           Leading cross-functional teams to develop intelligent automation solutions. 
+                           Establishing AI implementation frameworks and exploring practical AI applications 
+                           for business process optimization.
+                       </p>
+                   </div>
+               </div>
+               
+               <div class="timeline-item">
+                   <div class="timeline-marker"></div>
+                   <div class="timeline-content">
+                       <h3>Product Manager / Product Owner</h3>
+                       <div style="color: #4facfe; font-weight: 600; margin-bottom: 0.5rem;">Ubitricity GmbH</div>
+                       <div style="color: #b0b0b0; font-size: 0.9rem; margin-bottom: 1rem;">April 2023 - August 2024</div>
+                       <p style="color: #b0b0b0; line-height: 1.6;">
+                           Led complete Salesforce environment overhaul for EV charging infrastructure. 
+                           Identified 15+ processes now perfect for AI automation - laying groundwork 
+                           for my current AI transition.
+                       </p>
+                   </div>
+               </div>
+               
+               <div class="timeline-item">
+                   <div class="timeline-marker"></div>
+                   <div class="timeline-content">
+                       <h3>Digital Business Integration Analyst</h3>
+                       <div style="color: #4facfe; font-weight: 600; margin-bottom: 0.5rem;">Accenture GmbH</div>
+                       <div style="color: #b0b0b0; font-size: 0.9rem; margin-bottom: 1rem;">July 2021 - April 2023</div>
+                       <p style="color: #b0b0b0; line-height: 1.6;">
+                           Software configuration and international rollouts across 10+ markets. 
+                           Built expertise in workflow automation and system integration - skills 
+                           directly transferable to AI implementation.
+                       </p>
+                   </div>
+               </div>
+               
+               <div class="timeline-item">
+                   <div class="timeline-marker"></div>
+                   <div class="timeline-content">
+                       <h3>Process Manager & Salesforce Product Manager</h3>
+                       <div style="color: #4facfe; font-weight: 600; margin-bottom: 0.5rem;">Lemon One GmbH</div>
+                       <div style="color: #b0b0b0; font-size: 0.9rem; margin-bottom: 1rem;">July 2019 - June 2021</div>
+                       <p style="color: #b0b0b0; line-height: 1.6;">
+                           Built automated Salesforce workflows and process optimization systems. 
+                           Early foundation in automation that sparked my interest in AI-powered solutions.
+                       </p>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
+
+   <!-- Contact Section -->
+   <section class="contact-section" id="contact">
+       <div class="container">
+           <div class="contact-content">
+               <h2 class="section-title">Ready to Build AI Solutions Together?</h2>
+               <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                   Looking for hands-on AI roles where I can implement, not just manage. 
+                   Let's discuss how my automation expertise + AI learning can drive your projects.
+               </p>
+               
+               <div class="contact-links">
+                   <a href="mailto:durace@gmail.com" class="contact-link">
+                       <i class="fas fa-envelope"></i> durace@gmail.com
+                   </a>
+                   <a href="https://www.linkedin.com/in/oguzhanduraxe" class="contact-link">
+                       <i class="fab fa-linkedin"></i> LinkedIn
+                   </a>
+                   <a href="https://github.com/dureys/ai-portfolio-hub" class="contact-link">
+                       <i class="fab fa-github"></i> GitHub Portfolio
+                   </a>
+                   <a href="tel:+491768093317" class="contact-link">
+                       <i class="fas fa-phone"></i> +49 176 8009 3317
+                   </a>
+               </div>
+               
+               <div style="margin-top: 3rem; padding: 2rem; background: rgba(102, 126, 234, 0.1); border-radius: 15px; border: 1px solid rgba(102, 126, 234, 0.2);">
+                   <h3 style="color: var(--accent-blue); margin-bottom: 1rem;">What I'm Looking For</h3>
+                   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; color: var(--text-secondary);">
+                       <div>🎯 <strong>AI Implementation Specialist</strong></div>
+                       <div>⚡ <strong>AI Solutions Engineer</strong></div>
+                       <div>🔧 <strong>AI Automation Architect</strong></div>
+                       <div>💻 <strong>Technical AI Product Manager</strong></div>
+                   </div>
+                   <p style="margin-top: 1rem; color: var(--text-secondary); text-align: center;">
+                       <em>"I don't have 3 years of AI experience because the tools didn't exist 3 years ago. 
+                       But I'm building with them NOW, every day."</em>
+                   </p>
+               </div>
+           </div>
+       </div>
+   </section>
+
+   <!-- Footer -->
+   <footer class="footer">
+       <div class="container">
+           <p>© 2025 Oğuzhan DURAÇE • Building AI Solutions Daily • 
+           <a href="https://github.com/dureys/ai-portfolio-hub" style="color: var(--accent-blue);">
+               Follow My Journey on GitHub
+           </a></p>
+       </div>
+   </footer>
+
+   <script>
+       // Smooth scrolling for navigation links
+       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+           anchor.addEventListener('click', function (e) {
+               e.preventDefault();
+               const target = document.querySelector(this.getAttribute('href'));
+               if (target) {
+                   target.scrollIntoView({
+                       behavior: 'smooth',
+                       block: 'start'
+                   });
+               }
+           });
+       });
+
+       // Add scroll effect to navbar
+       window.addEventListener('scroll', function() {
+           const navbar = document.querySelector('.navbar');
+           if (window.scrollY > 100) {
+               navbar.style.background = 'rgba(26, 26, 26, 0.98)';
+           } else {
+               navbar.style.background = 'rgba(26, 26, 26, 0.95)';
+           }
+       });
+
+       // Animate elements on scroll
+       const observerOptions = {
+           threshold: 0.1,
+           rootMargin: '0px 0px -50px 0px'
+       };
+
+       const observer = new IntersectionObserver(function(entries) {
+           entries.forEach(entry => {
+               if (entry.isIntersecting) {
+                   entry.target.style.opacity = '1';
+                   entry.target.style.transform = 'translateY(0)';
+               }
+           });
+       }, observerOptions);
+
+       // Observe all skill categories and project cards
+       document.querySelectorAll('.skill-category, .project-card, .timeline-content').forEach(el => {
+           el.style.opacity = '0';
+           el.style.transform = 'translateY(20px)';
+           el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+           observer.observe(el);
+       });
+   </script>
 </body>
 </html>
