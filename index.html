@@ -450,6 +450,161 @@
             transform: translateX(3px);
         }
         
+        /* CV Section */
+        .cv-section {
+            padding: 6rem 0;
+            background: var(--dark-card);
+        }
+        
+        .cv-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .cv-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .cv-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .cv-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .cv-contact {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        
+        .cv-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .cv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .cv-section-block {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .cv-section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--accent-blue);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .cv-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .cv-item:last-child {
+            border-bottom: none;
+        }
+        
+        .cv-item h4 {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+        
+        .cv-item .institution {
+            color: var(--accent-blue);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .cv-item .period {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cv-item .details {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        .tech-categories {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .tech-category {
+            margin-bottom: 1rem;
+        }
+        
+        .tech-category h5 {
+            color: var(--accent-blue);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tech-list {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        .cv-portfolio {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+        
+        .cv-portfolio h4 {
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .cv-portfolio a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .cv-portfolio a:hover {
+            color: var(--text-primary);
+        }
+        
         .experience-section {
             padding: 6rem 0;
             background: var(--dark-card);
@@ -656,6 +811,24 @@
                 width: calc(100% - 50px);
             }
             
+            .cv-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .cv-contact {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .cv-section {
+                padding: 3rem 0;
+            }
+            
+            .cv-container {
+                padding: 0 1rem;
+            }
+            
             .timeline-marker {
                 left: 20px;
             }
@@ -670,6 +843,7 @@
                 <li><a href="#about">Journey</a></li>
                 <li><a href="#skills">AI Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#cv">CV</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -894,6 +1068,183 @@
                         </a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Section -->
+    <section class="cv-section" id="cv">
+        <div class="cv-container">
+            <div class="section-header">
+                <h2 class="section-title">Curriculum Vitae</h2>
+                <p class="section-subtitle">AI Automation Architect & Solutions Builder</p>
+            </div>
+            
+            <div class="cv-header">
+                <h3 class="cv-title">Oğuzhan DURAÇE</h3>
+                <p class="cv-subtitle">AI Automation Architect & Solutions Builder / Salesforce Product Owner</p>
+                
+                <div class="cv-contact">
+                    <div class="cv-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        durace.o@gmail.com
+                    </div>
+                    <div class="cv-contact-item">
+                        <i class="fas fa-phone"></i>
+                        +49 (0)176 8009 3317
+                    </div>
+                    <div class="cv-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Stralauer Platz 38, 10243, Berlin
+                    </div>
+                    <div class="cv-contact-item">
+                        <i class="fas fa-calendar"></i>
+                        04.05.1992 | Turkish
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cv-grid">
+                <!-- Left Column -->
+                <div>
+                    <!-- Education -->
+                    <div class="cv-section-block">
+                        <h3 class="cv-section-title">
+                            <i class="fas fa-graduation-cap"></i>
+                            Education
+                        </h3>
+                        
+                        <div class="cv-item">
+                            <h4>Master of Science in Management</h4>
+                            <div class="institution">ESMT Berlin - Germany</div>
+                            <div class="period">Sep 17 - Sep 19</div>
+                            <div class="details">
+                                Track: Quantitative Business<br>
+                                Specialization: Business Analytics
+                            </div>
+                        </div>
+                        
+                        <div class="cv-item">
+                            <h4>Bachelor of Business Administration</h4>
+                            <div class="institution">Koc University - Turkey</div>
+                            <div class="period">Sep 11 - Aug 16</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Languages -->
+                    <div class="cv-section-block">
+                        <h3 class="cv-section-title">
+                            <i class="fas fa-language"></i>
+                            Languages
+                        </h3>
+                        
+                        <div class="cv-item">
+                            <div class="details">
+                                <strong>Turkish:</strong> Native<br>
+                                <strong>English:</strong> C1<br>
+                                <strong>German:</strong> A2<br>
+                                <strong>French:</strong> A1
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Awards & Certifications -->
+                    <div class="cv-section-block">
+                        <h3 class="cv-section-title">
+                            <i class="fas fa-award"></i>
+                            Awards & Certifications
+                        </h3>
+                        
+                        <div class="cv-item">
+                            <h4>Certifications</h4>
+                            <div class="details">
+                                • Adobe Certified Professional - Adobe Analytics Business Practitioner<br>
+                                • Adobe Qualified - Adobe Experience Platform
+                            </div>
+                        </div>
+                        
+                        <div class="cv-item">
+                            <h4>Awards & Scholarships</h4>
+                            <div class="details">
+                                • Partial Merit Scholarship, ESMT (2017)<br>
+                                • Example Leader Award - Geleceğin Yıldızları Summer Camps, Uludağ (2017)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column -->
+                <div>
+                    <!-- Technology -->
+                    <div class="cv-section-block">
+                        <h3 class="cv-section-title">
+                            <i class="fas fa-code"></i>
+                            Technology Stack
+                        </h3>
+                        
+                        <div class="tech-categories">
+                            <div class="tech-category">
+                                <h5>LLMs:</h5>
+                                <div class="tech-list">OpenAI GPT-4, Claude API, Gemini, Local LLMs (Ollama)</div>
+                            </div>
+                            
+                            <div class="tech-category">
+                                <h5>AI Frameworks:</h5>
+                                <div class="tech-list">LangChain, LlamaIndex, Hugging Face</div>
+                            </div>
+                            
+                            <div class="tech-category">
+                                <h5>Automation:</h5>
+                                <div class="tech-list">n8n, Make.com, Zapier + AI</div>
+                            </div>
+                            
+                            <div class="tech-category">
+                                <h5>Development:</h5>
+                                <div class="tech-list">Python, JavaScript, REST APIs, Webhook orchestration</div>
+                            </div>
+                            
+                            <div class="tech-category">
+                                <h5>AI Tools:</h5>
+                                <div class="tech-list">Cursor, GitHub Copilot, Midjourney, Stable Diffusion</div>
+                            </div>
+                            
+                            <div class="tech-category">
+                                <h5>Traditional:</h5>
+                                <div class="tech-list">Salesforce, Adobe Suite, Agile, JIRA</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Current Role -->
+                    <div class="cv-section-block">
+                        <h3 class="cv-section-title">
+                            <i class="fas fa-briefcase"></i>
+                            Current Role
+                        </h3>
+                        
+                        <div class="cv-item">
+                            <h4>AI Automation Architect & Solutions Builder</h4>
+                            <div class="institution">Andercore GmbH</div>
+                            <div class="period">Aug 24 - Present | Berlin, Germany</div>
+                            <div class="details">
+                                • Leading high-impact initiatives across sales, procurement, logistics, and support<br>
+                                • Built AI-powered lead qualification engine achieving <strong>40% conversion uplift</strong><br>
+                                • Designed smart case management system with Salesforce Flows<br>
+                                • Developed Jira-Slack integration and AI support bot prototype
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cv-portfolio">
+                <h4>🚀 Portfolio & Projects</h4>
+                <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">
+                    Building production-ready AI solutions and documenting the journey
+                </p>
+                <a href="https://github.com/dureys/ai-portfolio-hub" target="_blank">
+                    github.com/dureys/ai-portfolio-hub
+                </a>
             </div>
         </div>
     </section>
