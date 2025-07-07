@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oğuzhan DURAÇE - AI Solutions Builder | From Product Owner to AI Architect</title>
-    <meta name="description" content="Product Owner transitioning to AI Solutions Builder. Building practical AI tools daily. 5+ years automation expertise + emerging AI skills.">
+    <meta name="description" content="Product Owner transitioning to AI Solutions Builder. Building practical AI tools daily. 6+ years automation expertise + emerging AI skills.">
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -32,7 +32,6 @@
             overflow-x: hidden;
         }
         
-        /* Modern Navigation */
         .navbar {
             position: fixed;
             top: 0;
@@ -79,7 +78,6 @@
             color: var(--accent-blue);
         }
         
-        /* Hero Section - Career Transition Story */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -196,7 +194,6 @@
             border-color: var(--accent-blue);
         }
         
-        /* Journey Visualization */
         .journey-visual {
             background: var(--dark-card);
             border-radius: 20px;
@@ -252,7 +249,6 @@
             50% { opacity: 0.7; }
         }
         
-        /* AI Skills Showcase */
         .skills-section {
             padding: 6rem 0;
             background: var(--dark-card);
@@ -350,7 +346,6 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        /* AI Projects Showcase */
         .projects-section {
             padding: 6rem 0;
             background: var(--dark-bg);
@@ -455,7 +450,6 @@
             transform: translateX(3px);
         }
         
-        /* Experience Timeline */
         .experience-section {
             padding: 6rem 0;
             background: var(--dark-card);
@@ -518,7 +512,6 @@
             border-color: var(--accent-blue);
         }
         
-        /* Contact Section */
         .contact-section {
             padding: 6rem 0;
             background: var(--dark-bg);
@@ -558,7 +551,6 @@
             transform: translateY(-3px);
         }
         
-        /* Footer */
         .footer {
             background: var(--dark-card);
             text-align: center;
@@ -566,7 +558,6 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        /* Mobile Fixes */
         @media (max-width: 768px) {
             .container {
                 padding: 0 1rem;
@@ -672,7 +663,6 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">Oğuzhan DURAÇE</div>
@@ -686,7 +676,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero" id="about">
         <div class="hero-container">
             <div class="hero-content">
@@ -756,7 +745,6 @@
         </div>
     </section>
 
-    <!-- AI Skills Section -->
     <section class="skills-section" id="skills">
         <div class="container">
             <div class="section-header">
@@ -819,7 +807,6 @@
         </div>
     </section>
 
-    <!-- AI Projects Section -->
     <section class="projects-section" id="projects">
         <div class="container">
             <div class="section-header">
@@ -911,7 +898,6 @@
         </div>
     </section>
 
-    <!-- Experience Timeline -->
     <section class="experience-section" id="experience">
         <div class="container">
             <div class="section-header">
@@ -1000,7 +986,6 @@
        </div>
    </section>
 
-   <!-- Contact Section -->
    <section class="contact-section" id="contact">
        <div class="container">
            <div class="contact-content">
@@ -1042,7 +1027,6 @@
        </div>
    </section>
 
-   <!-- Footer -->
    <footer class="footer">
        <div class="container">
            <p>© 2025 Oğuzhan DURAÇE • Building AI Solutions Daily • 
@@ -1053,7 +1037,6 @@
    </footer>
 
    <script>
-       // Smooth scrolling for navigation links
        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
            anchor.addEventListener('click', function (e) {
                e.preventDefault();
@@ -1067,7 +1050,6 @@
            });
        });
 
-       // Add scroll effect to navbar
        window.addEventListener('scroll', function() {
            const navbar = document.querySelector('.navbar');
            if (window.scrollY > 100) {
@@ -1077,7 +1059,6 @@
            }
        });
 
-       // Animate elements on scroll
        const observerOptions = {
            threshold: 0.1,
            rootMargin: '0px 0px -50px 0px'
@@ -1092,7 +1073,6 @@
            });
        }, observerOptions);
 
-       // Observe all skill categories and project cards
        document.querySelectorAll('.skill-category, .project-card, .timeline-content').forEach(el => {
            el.style.opacity = '0';
            el.style.transform = 'translateY(20px)';
